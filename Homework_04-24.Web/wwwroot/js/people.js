@@ -59,16 +59,18 @@
         $('#save-person').hide();
         $('.modal-title').text("Edit person");
 
-        $('#update-person').on('click', function () {
-            const id = $('.modal').data('person-id');
-            const firstName = $('#firstName').val();
-            const lastName = $('#lastName').val();
-            const age = $('#age').val();
+    })
 
-            $.post("/home/editperson", { id, firstName, lastName, age }, function () {
-                refreshTable();
-                modal.hide();
-            })
+
+    $('#update-person').on('click', function () {
+        const id = $('.modal').data('person-id');
+        const firstName = $('#firstName').val();
+        const lastName = $('#lastName').val();
+        const age = $('#age').val();
+
+        $.post("/home/editperson", { id, firstName, lastName, age }, function () {
+            modal.hide();
+            refreshTable();
         })
     })
 
